@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>豆咖的主页</title>
+    <meta name="keywords" content="豆咖的主页"/>
+    <meta name="Description" content="豆咖的主页_记录自己生活的，只为老了我们有所回忆！"/>
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/layout.css"/>
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+	<link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<body class="index">
+	<header class="logo">
+		<div class="small-menu">
+			<img src="img/menu.png">
+			<ul class="sub-menu">
+				<li><a href="javascript:void(0);" data-type="1">我的故事</a></li>
+				<li><a href="javascript:void(0);" data-type="2">我的笑话</a></li>
+				<li><a href="javascript:void(0);" data-type="3">我的分享</a></li>
+				<li><a href="javascript:void(0);" data-type="4">个人点滴</a></li>
+			</ul>
+		</div>
+		<img src="img/psb.jpg" class="bg"/>
+		<div class="header-content">
+			<img src="img/run.png" class="running"/>
+			<h1>DOUKA</h1>
+			<p>每天跑,才能蜕变自己!</p>
+		</div>
+	</header>
+	<div class="header">
+		<div class="menu">
+			<ul class="navContainer">
+				<li data-type="1"><i class="iconfont">&#xe689;</i><span>我的故事</span></li>
+				<li data-type="2"><i class="iconfont">&#xe678;</i><span>我的笑话</span></li>
+				<li data-type="3">
+					<i class="iconfont">&#xe68c;</i>
+					<span>我的分享</span>
+				</li>
+				<li class="current" data-type="4"><i class="iconfont">&#xe6bb;</i><span>个人点滴</span></li>
+				</ul>
+		</div>
+	</div>
+	<div class="not-container">
+		<h1>暂无更多内容，正在努力建设中......</h1>
+	</div>
+	<div id="container-list">
+	</div>
+	<footer class="footer">
+		<div class="copyright">
+			<p>1688service.com.</p>
+		</div>
+	</footer>
+	<script src="//cdn.bootcss.com/zepto/1.1.6/zepto.min.js"></script>
+    <script src="//cdn.bootcss.com/handlebars.js/4.0.5/handlebars.js"></script>
+    <script src="js/common/util.js"></script>
+    <script src="js/index/index.js"></script>
+    <script type="text/x-handlebars-template" id="index-list">
+    		{{#each this}}
+	    		<div class="container">
+				<div class="list-article">
+					<div class="list-article-img">
+						<h2><a href="article.html?id={{id}}#{{id}}">{{title}}</a></h2>
+						<p class="time">发表于{{addTime}}</p>
+					</div>
+					<div class="hr-line"></div>
+					<div class="list-article-text">
+						<p>{{getStr content}}...</p>
+						<a href="article.html?id={{id}}#{{id}}" class="read-all">阅读全部</a>
+					</div>
+				</div>
+				</div>
+    		{{/each}}
+    </script>
+    <!--<script type="text/javascript">
+    	WB2.anyWhere(function(W){
+    W.widget.connectButton({
+        id: "wb_connect_btn",	
+        type:"3,2",
+        callback : {
+            login:function(o){	//登录后的回调函数
+            },	
+            logout:function(){	//退出后的回调函数
+            }
+        }
+    });
+});
+    </script>-->
+</body>
+</html>

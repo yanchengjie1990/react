@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:wb="//open.weibo.com/wb">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/layout.css"/>
+	<link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+</head>
+<body>
+	<div class="small-menu">
+			<img src="img/menu.png">
+			<ul class="sub-menu">
+				<li><a href="javascript:void(0);" data-type="1">故事汇</a></li>
+				<li><a href="javascript:void(0);" data-type="2">笑话营地</a></li>
+				<li><a href="javascript:void(0);" data-type="3">险地求生</a></li>
+				<li><a href="javascript:void(0);" data-type="4">个人点滴</a></li>
+			</ul>
+	</div>
+	<div class="header">
+		<div class="menu">
+			<ul class="navContainer">
+				<li data-type="1"><i class="iconfont">&#xe689;</i><span>故事汇</span></li>
+				<li data-type="2"><i class="iconfont">&#xe678;</i><span>笑话营地</span></li>
+				<li data-type="3">
+					<i class="iconfont">&#xe68c;</i>
+					<span>险地求生</span>
+				</li>
+				<li class="current" data-type="4"><i class="iconfont">&#xe6bb;</i><span>个人点滴</span></li>
+			</ul>
+		</div>
+		<!--<div id="back-home">
+			<a href="index.htm"><img src="img/home.gif"></a>
+		</div>-->
+	</div>
+	<section class="article-container">
+		<div class="sina_follow">
+			<wb:follow-button uid="2874545622" type="red_3" width="100%" height="24"></wb:follow-button>
+		</div>
+		<div class="bdsharebuttonbox" style="position:absolute;left:180px;top:5px;width: 150px; margin:0 auto"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+		
+		<div class="article-detail" id="article-detail">
+		</div>
+		<div class="information-detail">
+			<h2>关于作者</h2>
+			<div class="anthor-detail">
+				<a href="javascript:void(0);" class="contact-me">QQ:503634165</a>
+			</div>
+
+		</div>
+	</section>
+	<footer class="footer">
+		<div class="copyright">
+			<p>Copyright ©2015-2016 1688service.com.</p>
+		</div>
+	</footer>
+	<script src="//cdn.bootcss.com/zepto/1.1.6/zepto.min.js"></script>
+    <script src="//cdn.bootcss.com/handlebars.js/4.0.5/handlebars.js"></script>
+    <script src="js/common/util.js"></script>
+    <script src="js/article/article.js?da=1213"></script>
+    <script type="text/x-handlebars-template" id="article-list">
+    		<h1>{{title}}</h1>
+			<div class="article-source">{{from}}</div>
+			<div class="article-text">
+				{{{descript}}}
+				<p><img src="img/zf1.png" alt="长按识别" style="display: block;width: 180px; margin: 0 auto;"/></p>
+				<p style="line-height: 2; text-align: center;font-size: 12px;">长按识别二维码</p>
+			</div>
+    </script>
+    <script type="text/x-handlebars-template" id="article-page">
+    	<div class="article-page" id="article-page-a">
+    		{{#if prevId}}
+				<a href="javascript:void(0);" data-type="{{prevId}}" id="prev" class="left">上一篇：<span>{{prevTitle}}</span></a>
+    		{{else}}
+				<a href="javascript:void(0);" class="left disable">上一篇：<span>没有更多文章...</span></a>
+    		{{/if}}
+    		{{#if nextId}}
+				<a href="javascript:void(0);" id="next" data-type="{{nextId}}" class="right">下一篇：<span>{{nextTitle}}</span></a>
+    		{{else}}
+				<a href="javascript:void(0);" class="right disable">下一篇：<span>没有更多文章...</span></a>
+    		{{/if}}
+		</div>
+    </script>
+	<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+	<script src="//tjs.sjs.sinajs.cn/open/api/js/wb.js"></script>
+
+</body>
+</html>
