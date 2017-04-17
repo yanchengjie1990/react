@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<html xmlns:wb="http://open.weibo.com/wb">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <title>豆咖的主页</title>
@@ -16,23 +17,27 @@
 		<div class="small-menu">
 			<img src="img/menu.png">
 			<ul class="sub-menu">
-				<li><a href="javascript:void(0);" data-type="1">我的故事</a></li>
-				<li><a href="javascript:void(0);" data-type="2">我的笑话</a></li>
-				<li><a href="javascript:void(0);" data-type="3">我的分享</a></li>
+				<li><a href="javascript:void(0);" data-type="1">故事汇</a></li>
+				<li><a href="javascript:void(0);" data-type="2">笑话营地</a></li>
+				<li><a href="javascript:void(0);" data-type="3">险地求生</a></li>
 				<li><a href="javascript:void(0);" data-type="4">个人点滴</a></li>
 			</ul>
 		</div>
 		<img src="img/psb.jpg" class="bg"/>
 		<div class="header-content">
 			<img src="img/run.png" class="running"/>
-			<h1>DOUKA</h1>
+			<h1>BLOG</h1>
 			<p>每天跑,才能蜕变自己!</p>
+			<div class="bdsharebuttonbox" style="width: 140px; margin: 0 auto;">
+	  			<wb:login-button type="3,2" onlogin="login" onlogout="logout">登录按钮</wb:login-button>
+				<!--<a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>-->
+			</div>
 		</div>
 	</header>
 	<div class="header">
 		<div class="menu">
 			<ul class="navContainer">
-				<li data-type="1"><i class="iconfont">&#xe689;</i><span>我的故事</span></li>
+				<li data-type="1"><i class="iconfont">&#xe689;</i><span>个人故事</span></li>
 				<li data-type="2"><i class="iconfont">&#xe678;</i><span>我的笑话</span></li>
 				<li data-type="3">
 					<i class="iconfont">&#xe68c;</i>
@@ -49,9 +54,10 @@
 	</div>
 	<footer class="footer">
 		<div class="copyright">
-			<p>1688service.com.</p>
+			<p>Copyright ©2015-2016 1688service.com.</p>
 		</div>
 	</footer>
+	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=411214063" type="text/javascript" charset="utf-8"></script>
 	<script src="//cdn.bootcss.com/zepto/1.1.6/zepto.min.js"></script>
     <script src="//cdn.bootcss.com/handlebars.js/4.0.5/handlebars.js"></script>
     <script src="js/common/util.js"></script>
@@ -73,7 +79,7 @@
 				</div>
     		{{/each}}
     </script>
-    <!--<script type="text/javascript">
+    <script type="text/javascript">
     	WB2.anyWhere(function(W){
     W.widget.connectButton({
         id: "wb_connect_btn",	
@@ -86,6 +92,6 @@
         }
     });
 });
-    </script>-->
+    </script>
 </body>
 </html>
