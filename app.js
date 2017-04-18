@@ -1,5 +1,5 @@
 var config = {
-	hostname: '119.23.44.145',
+	hostname: '172.18.117.132',
     port: 8080
 };
 var http = require('http');
@@ -10,7 +10,7 @@ var server = http.createServer(function(req, res) {
 	//contentType: text/html
 	res.writeHead(200, {'Content-Type': 'text/html'});
 	// send response data "Hello World"
-	rf.readFile('index.html', 'utf-8', function(err, data){  
+	rf.readFile('demo/index.htm', 'utf-8', function(err, data){  
 	    if(err){  
 	        console.log('error');  
 	    }else{  
