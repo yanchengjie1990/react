@@ -38,9 +38,9 @@ var express = require("express");
 var proxy = require("express-http-proxy");
 var app = express();
 var path = require('path');
-app.use(express.static(path.join(__dirname, 'demo')));
 var port = 8088;
-var url1 = "http://172.18.117.132:8080";
+var url0 = "http://172.18.117.132:8080";
+var url1 = "http://www.1688service.com";
 var url2 = "http://119.23.44.145:8080";
 var apiProxy = proxy(url1, {
 	forwardPath:function(req,res){
@@ -48,7 +48,6 @@ var apiProxy = proxy(url1, {
 	}
 })
 app.use("/", apiProxy);
-app.use("/proxy/*", apiProxy);
 app.use(express.static(path.join(__dirname, 'demo')));
 
 app.listen(port);
