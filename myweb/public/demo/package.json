@@ -1,8 +1,8 @@
 {
-  "name": "react",
+  "name": "demo",
   "version": "1.0.1",
-  "description": "This is example",
-  "main": "main.js",
+  "description": "This is demo",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,10 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/yanchengjie1990/react.git"
   },
-  "keywords": [
-    "react"
-  ],
-  "author": "Jerry",
+  "author": "ycj",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/yanchengjie1990/react/issues"
@@ -21,8 +18,6 @@
   "homepage": "https://github.com/yanchengjie1990/react#readme",
   "dependencies": {
     "express": "^4.15.2",
-    "materialize": "^1.0.0",
-    "webpack": "^2.4.1",
-    "webpack-dev-server": "^2.4.2"
+    "express-http-proxy": "^0.11.0"
   }
 }
