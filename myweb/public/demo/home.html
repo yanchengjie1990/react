@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>逗咖的主页</title>
+    	<link rel="stylesheet" type="text/css" href="demo/css/reset.css"/>
+    	<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_gvd314ihiplxflxr.css"/>
+  		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    	<link rel="stylesheet" type="text/css" href="demo/css/home.css"/>
+    	<script src="demo/js/common/jquery.js" type="text/javascript" charset="utf-8"></script>
+    	<style type="text/css">
+    		html,body{
+    			width: 100%;
+    			height: 100%;
+    			overflow: hidden;
+    		}
+    	</style>
+	</head>
+	<body>
+		<div class="blur"></div>
+		<div class="main_menu">
+			<ul id="menu">
+				<li class="left">
+					<div class="sub_menu">
+						<span class="iconfont icon-web"></span>
+						<p>WEB知识</p>
+					</div>
+				</li>
+				<li class="left">
+					<div class="sub_menu">
+						<img src="demo/img/logo.png" class="logo" width="300" height="300" />
+					</div>
+				</li>
+				<li class="left">
+					<div class="sub_menu">
+						<span class="iconfont icon-life"></span>
+						<p>生活乐趣</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<canvas id="canvas" width="100" height="100"></canvas>
+		<script type="text/javascript">
+			(function($){
+			var imageArray = ['demo/img/t-1.png', 'demo/img/t-2.png', 'demo/img/t-3.png', 'demo/img/t-4.png', 'demo/img/t-5.png', 'demo/img/t-6.png'];
+			var imgObj = [];
+			imageArray.map(function(i) {
+				var img = $('<img />').attr('src', i);
+				imgObj.push(img);
+			});
+			var peachLeaf = [];
+			var imgWidth = 20;
+			var imgHeight = 20;
+			var canvas = document.getElementById('canvas');
+			var context = canvas.getContext('2d');
+			var image = new Image();
+			var timer = null;
+			image.src = 'demo/img/bg.png';
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+			image.onload = function() {
+				context.globalAlpha = 1;
+				generateLeaf(200);
+				timer = setInterval(function() {
+					drawPeachLeaf(context);
+				}, 60);
+			};
+			window.onresize = function() {
+				peachLeaf = [];
+				generateLeaf(200);
+			}
+			function generateLeaf(num) {
+				var objY = [-110, -210, -320, -430, -540];
+				var num = num || 200;
+				for(var i = 0; i < num;i++){
+					var config = {};
+					var randomImg = Math.floor(Math.random()*imgObj.length);
+					var images = imgObj[randomImg][0];
+					config.x = Math.abs(Math.floor(Math.random() * window.innerWidth)); //减掉图片大小
+					config.a = Math.random() * 360;
+					config.y = objY[Math.floor(Math.random() * objY.length)];
+					config.img = images;
+					peachLeaf.push(config);
+				};
+			};
+			function clearDom() {
+				var cnt = 0;
+				for(var i = 0; i < peachLeaf.length; i++){
+					if (peachLeaf[i].y > window.innerHeight) {
+						peachLeaf.splice(i, 1);
+						generateLeaf(Math.floor(Math.random() * 1 + 1));
+					}
+				};
+			};
+			/**
+			 * drop
+			 * **/
+			function dropImg() {
+				for (var i = 0; i < peachLeaf.length; i++){
+				 	peachLeaf[i].y += 10;
+				 	peachLeaf[i].x -= 3;
+				};
+				clearDom();
+			};
+			
+			function drawPeachLeaf(ctx) {
+				context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+				context.drawImage(image, 0, 0, canvas.width,canvas.height);
+				for (var i = 0; i < peachLeaf.length; i++) {
+					context.save();
+					context.rotate(peachLeaf[i].a / 180 * Math.PI);
+					context.drawImage(peachLeaf[i].img, peachLeaf[i].x, peachLeaf[i].y, imgWidth, imgHeight);
+					context.restore();
+				};
+				dropImg();
+			}
+			
+			})(jQuery)
+		</script>
+	</body>
+</html>

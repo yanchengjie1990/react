@@ -1,0 +1,68 @@
+#canvas{
+	position: relative;
+    z-index: 1;
+}
+.main_menu{
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -150px 0 0 -480px;
+    z-index: 11;
+}
+#menu li{
+	display: block;
+	float: left;
+	width: 300px;
+	margin-left: 30px;
+}
+#menu li:first-child{
+	margin: 0;
+}
+#menu li .sub_menu{
+	cursor: pointer;
+	position: relative;
+    display: block;
+    height: 300px;
+    overflow: hidden;
+	border-radius: 10px;
+    background: rgba(255, 50, 103, 1);
+    transition: box-shadow 300ms linear,-webkit-transform 300ms linear,-moz-transform 300ms linear,-o-transform 300ms linear,transform 300ms linear,background-color 300ms linear;
+}
+#menu li .sub_menu:hover{
+	border-radius: 20px;
+	box-shadow:0 15px 30px rgba(255, 50, 103,.8);
+	-webkit-transform:translate3d(0,-2px,0);
+	transform:translate3d(0,-2px,0);
+	background-color:rgba(255, 50, 103, 1)
+}
+#menu li .sub_menu span.iconfont{
+	display: block;
+	margin-top: 40px;
+	color: #fff;
+	font-size: 140px;
+}
+#menu li .sub_menu p{
+	margin-top: 20px;
+	font-size: 20px;
+	color: #fff;
+	line-height: 2;
+}
+.logo{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin:-150px 0 0 -150px;
+}
+.blur{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.13);
+	filter: blur(100px);
+	-webkit-filter: blur(230px);
+	z-index: 2;
+}
