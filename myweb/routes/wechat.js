@@ -20,10 +20,11 @@ router.get('/', function(req, res, next) {
 		var echostr = req.query.echostr;
 		var str = [token, signature, nonce, timestamp, echostr].sort().join('');
 		var sha = sha1(str);
+		console.log(sha === signature);
 		if (sha === signature) {
-			req.body = echostr + '';
+			res.send(echostr + '');
 		} else {
-			req.body = 'wrong';
+			res.send('wrong');
 		}
 	}
 });
