@@ -1,0 +1,27 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "this is react demo",
+  "main": "index.js",
+  "scripts": {
+  	"start": "webpack-dev-server --hot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanchengjie1990/react.git"
+  },
+  "author": "Jerry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yanchengjie1990/react/issues"
+  },
+  "homepage": "https://github.com/yanchengjie1990/react#readme",
+  "dependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  }
+}

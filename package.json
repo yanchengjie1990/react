@@ -24,5 +24,8 @@
     "materialize": "^1.0.0",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.2"
+  },
+  "devDependencies": {
+    "cheerio": "^0.22.0"
   }
 }
