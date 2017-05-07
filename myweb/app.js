@@ -1,5 +1,4 @@
 var express = require('express');
-var sha1 = require('sha1');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -32,27 +31,7 @@ app.use('/home1', home1);
 //app.use('/users', users);
 
 //wx wechat
-var wxConfig = {
-	wechat: {
-		appID: 'wxb301ec2497baee6a',
-		appSecret: 'ab490017f78d9acdfb009275a44e7f1e',
-		token: '1688servicey@nchengjie'
-	}
-};
-app.use('/wx', function(next) {
-	var token = wxConfig.wechat.token;
-	var signature = this.query.wechat.signature;
-	var nonce = this.query.nonce;
-	var timestamp = this.query.timestamp;
-	var ecostr = this.query.ecostr;
-	var str = [token, signature, nonce, timestamp, ecostr];
-	var sha = sha1(str);
-	if (sha === signature) {
-		this.body = ecostr + '';
-	} else {
-		this.body = 'wrong'
-	}
-})
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
