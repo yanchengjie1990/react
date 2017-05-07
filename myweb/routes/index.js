@@ -4,8 +4,8 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	console.log(this.query);
-	if (this.query) {
+	console.log(req.query);
+	if (req.query) {
 		var wxConfig = {
 			wechat: {
 				appID: 'wxb301ec2497baee6a',
@@ -14,10 +14,10 @@ router.get('/', function(req, res, next) {
 			}
 		};
 		var token = wxConfig.wechat.token;
-		var signature = this.query.signature;
-		var nonce = this.query.nonce;
-		var timestamp = this.query.timestamp;
-		var echostr = this.query.echostr;
+		var signature = req.query.signature;
+		var nonce = req.query.nonce;
+		var timestamp = req.query.timestamp;
+		var echostr = req.query.echostr;
 		var str = [token, signature, nonce, timestamp, echostr].sort().join('');
 		var sha = sha1(str);
 		if (sha === signature) {
