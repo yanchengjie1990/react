@@ -3,7 +3,7 @@ var sha1 = require('sha1');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/wechat', function(req, res, next) {
+router.get('/', function(req, res, next) {
 	console.log(req.query);
 	if (req.query) {
 		var wxConfig = {
