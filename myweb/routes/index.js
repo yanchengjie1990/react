@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 		}
 	};
 	var token = wxConfig.wechat.token;
-	var signature = this.query.wechat.signature;
+	var signature = this.query.signature;
 	var nonce = this.query.nonce;
 	var timestamp = this.query.timestamp;
 	var ecostr = this.query.ecostr;
