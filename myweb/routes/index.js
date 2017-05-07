@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	console.log(this.query)
+	console.log(this.query);
 	if (this.query) {
 		var wxConfig = {
 			wechat: {
