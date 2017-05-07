@@ -21,6 +21,8 @@ router.get('/', function(req, res, next) {
 		var str = [token, signature, nonce, timestamp, echostr].sort().join('');
 		var sha = sha1(str);
 		console.log(sha === signature);
+		console.log("str " + str);
+		console.log("signature :" + signature);
 		if (sha === signature) {
 			res.send(echostr + '');
 		} else {
