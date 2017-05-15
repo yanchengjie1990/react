@@ -1,10 +1,9 @@
 var express = require('express');
 var sha1 = require('sha1');
 var router = express.Router();
-
+console.log(sha1("message"));
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	console.log(req.query);
 	if (req.query) {
 		var wxConfig = {
 			wechat: {
@@ -21,7 +20,7 @@ router.get('/', function(req, res, next) {
 		var str = [token, signature, nonce, timestamp, echostr].sort().join('');
 		var sha = sha1(str);
 		console.log(sha === signature);
-		console.log("str " + str);
+		console.log("sha" + sha);
 		console.log("signature :" + signature);
 		if (sha === signature) {
 			res.send(echostr + '');

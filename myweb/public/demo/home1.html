@@ -5,35 +5,54 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title>逗咖的主页</title>
     	<link rel="stylesheet" type="text/css" href="demo/css/reset.css"/>
-    	<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_gvd314ihiplxflxr.css"/>
-  		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    	<link rel="stylesheet" type="text/css" href="demo/css/home.css"/>
-    	<script src="demo/js/common/jquery.js" type="text/javascript" charset="utf-8"></script>
-    	<style type="text/css">
-    		html,body{
-    			width: 100%;
-    			height: 100%;
-    			background:#f8f8f8;
-    			overflow: hidden;
-    		}
-    	</style>
+    	<link rel="stylesheet" type="text/css" href="demo/css/index.css"/>
+    	<script src="demo/js/common/jquery.js"></script>
 	</head>
 	<body>
-		<div id="wrapper">
-			<div class="logo">
-				
-			</div>
-		</div>
-		<script id="commentTemplate" type="text/html">   
-	    <li>  
-	        <div class="photo">  
-	            <a href="#"> <img src="[UserImg]" /></a>  
-	        </div>  
-	        <p>  
-	            <a href="#">[UserName]：</a><span class="time">[CreateDate]</span>  
-	        </p>  
-	        <div class="clear"></div>  
-	    </li>  
-		</script> 
+    	<!--<script src="demo/js/common/canvas.js"></script>-->
+    	<div class="wrapper">
+    		<div class="logo">
+    			<img src="demo/img/dxlogorotate.png" width="42" class="logo-circle animated bounce">
+    			<!--<img src="demo/img/dlogo.png" class="logo-img" alt="逗讯" width="100" />-->
+    			<a href="#" class="right register">注册</a>
+    		</div>
+    		<h1 class="tip"><img src="demo/img/world.png" alt="世界因您而逗--逗讯" title="世界因您而逗--逗讯" /></h1>
+    		<div class="form">
+    			<input type="text" name="username" id="username" placeholder="请输入邮箱或手机" class="in_input" value="" />
+    			<input type="password" name="password" id="password" placeholder="请输入密码"  class="in_input" value="" />
+    			<a href="javascript:void(0);" class="login-btn">登录</a>
+    		</div>
+    		<div class="descript">
+    			<p></p>
+    			<p></p>
+    			<p></p>
+    		</div>
+    		<div class="dialog"></div>
+    		<div class="s-skin-container s-isindex-wrap" style="background-color:#404040;background-image:url(&quot;https://ss3.bdstatic.com/iPoZeXSm1A5BphGlnYG/skin/54.jpg?2&quot;);">  </div>
+    	</div>
+    	<script type="text/javascript">
+    		(function($){
+    			var strArray = ['「逗讯」是一个基于抖乐趣事经验交流的世界。', 'lai这里,索取片刻的乐趣,绽放自己内心的小怪咖(神逗B)', '在这里我们认识更多的逗B,做更多的逗事!'];
+    			var imgHtml = '<img src="demo/img/dx1.png" width="70" class="zoomIn animated"><img src="demo/img/circlelogo.png" width="15" class="animateds circlelogo" alt="">';
+    			setTimeout(function() {
+    				$('.logo').append(imgHtml);
+    			},2000);
+    			var i = 0;
+    			var j = 0;
+    			var timer = setInterval(function() {
+    				if (i < strArray.length) {
+    					if (j < strArray[i].length){
+    						$('.descript p').eq(i).append(strArray[i][j]);
+    						++j;
+    					} else {
+    						i++;
+    						j = 0;
+    					}
+    				} else {
+    					clearInterval(timer);
+    				}
+    			}, 150)
+    		}(jQuery))
+    	</script>
 	</body>
 </html>
